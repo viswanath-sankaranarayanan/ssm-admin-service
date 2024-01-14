@@ -1,2 +1,2 @@
 # ssm-admin-service
-SSM Admin Spring Boot applicatoin
+This application is for school management.
