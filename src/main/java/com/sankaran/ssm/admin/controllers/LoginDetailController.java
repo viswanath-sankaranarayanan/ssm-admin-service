@@ -44,7 +44,9 @@ public class LoginDetailController {
     }
 
     @GetMapping("user-detail/{userId}")
-    public ResponseEntity<String> getLoggedInUserDetail(@PathVariable("userId") Long userId){
-        return new ResponseEntity<>(loginDetailService.getLoggedInUserDetail(userId), HttpStatus.OK);
+    public ResponseEntity<LoginDetailDto> getLoggedInUserDetail(@PathVariable("userId") Long userId){
+        LoginDetailDto loginDetailDto = new LoginDetailDto();
+        loginDetailDto.setLoginUserName(loginDetailService.getLoggedInUserDetail(userId));
+        return new ResponseEntity<>(loginDetailDto, HttpStatus.OK);
     }
 }
